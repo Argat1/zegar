@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zegar.MainPage">
+
+    <ContentPage Title="Zegar" BackgroundColor="DarkGray">
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label
+                x:Name="clockLabel"
+                FontSize="40"
+                TextColor="WhiteSmoke"
+                VerticalTextAlignment="Center" />
+            <Label
+                x:Name="clockDateLabel"
+                FontSize="20"
+                TextColor="WhiteSmoke" />
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="Alarm" BackgroundColor="DarkGray">
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <TimePicker
+                x:Name="TimePickerAlarm"
+                Format="HH:mm"
+                TextColor="WhiteSmoke" />
+            <Button
+                BackgroundColor="WhiteSmoke"
+                Clicked="SetAlarm_Clicked"
+                CornerRadius="45"
+                Text="Ustaw alarm"
+                TextColor="DarkGray"
+                WidthRequest="200" />
+        </StackLayout>
+    </ContentPage>
+
+
+    <ContentPage Title="Minutnik" BackgroundColor="DarkGray">
+        <StackLayout>
+            <Label Text="Ustaw czas:" FontSize="Large"/>
+            <Entry x:Name="entryTime" Placeholder="Ustaw czas (w minutach):" FontSize="Large"/>
+            <Label x:Name="remainingTimeLabel" Text="00:00" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Large"/>
+            <Button Text="Start" Clicked="startButton_Clicked" FontSize="Large"/>
+        </StackLayout>
+    </ContentPage>
+
+</TabbedPage>
